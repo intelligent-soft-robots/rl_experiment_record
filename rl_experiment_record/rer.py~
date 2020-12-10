@@ -1,0 +1,24 @@
+import numpy as np
+
+
+
+
+class Episode:
+
+    def __init__(self,
+                 step_attributes,
+                 parameters={}):
+
+        step_attributes = {attr:numpy.zeros((val[0],1),dtype=val[1])
+                           for attr,val in step_attributes.items()}
+        self.Step = type("Step",(),step_attributes)
+        setattr(self.Step,"__slots__",tuple(step_attributes.keys()))
+        self.parameters = parameters
+
+        self.steps = []
+
+    def record(self,attributes):
+
+        
+        
+        
